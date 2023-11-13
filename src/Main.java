@@ -8,6 +8,7 @@ public class Main {
         String nombre;
         Scanner read = new Scanner(System.in);
         do{
+            //Menu de opciones
             System.out.println("**** Ingrese una opcion ****");
             System.out.println("1.Agregar un aeropuerto a la lista: ");
             System.out.println("2.Eliminar un aeropuerto de la lista");
@@ -46,9 +47,11 @@ public class Main {
             }
         }while(opcion != 6);
     }
+    //Funcion para agregar un aeropuerto al arraylist(opcion 1)
     public static void agregarAeropuerto(ArrayList<Aeropuerto> listaAeropuertos){
-        Aeropuerto a1 = new Aeropuerto();
+        Aeropuerto a1 = new Aeropuerto(); //Se inicializa un nuevo aeropuerto
         Scanner read = new Scanner(System.in);
+        //Se piden los datos
         System.out.println("Ingrese el nombre del aeropuerto");
         a1.setNombre(read.nextLine());
         System.out.println("Ingrese el pais del aeropuerto");
@@ -59,7 +62,7 @@ public class Main {
         a1.setPistasAterrizaje(read.nextInt());
         listaAeropuertos.add(a1);
     }
-
+    //Funcion para eliminar un aeropuerto del arraylist(opcion 2)
     public static void eliminarAeropuerto(String nombre,ArrayList<Aeropuerto> listaAeropuertos){
         boolean aeropuertoEncontrado = false;
         if(listaAeropuertos.size() > 0) {
@@ -79,6 +82,7 @@ public class Main {
         }
         }
 
+    //Funcion para buscar un aeropuerto por nombre en el arraylist(opcion 3)
     public static void buscarAeropuertoPorNombre(String nombre,ArrayList<Aeropuerto> listaAeropuertos){
         boolean aeropuertoEncontrado = false;
         if(listaAeropuertos.size() > 0) {
@@ -98,6 +102,7 @@ public class Main {
         }
     }
 
+    //Funcion para listar los aeropuertos(opcion 4)
     public static void listarAeropuertos(ArrayList<Aeropuerto> listaAeropuertos){
         if(listaAeropuertos.size() > 0) {
             for (int i = 0; i < listaAeropuertos.size(); i++) {
@@ -107,7 +112,7 @@ public class Main {
             System.out.println("No hay aeropuertos en la lista");
         }
     }
-
+    //Funcion para buscar un aeropuerto segun la posicion en la lista(opcion 5)
     public static void aeropuertoPorPosicion(int posicion,ArrayList<Aeropuerto> listaAeropuertos){
         if(listaAeropuertos.size() > 0) {
             if (posicion >= 1 && posicion <= listaAeropuertos.size()){
